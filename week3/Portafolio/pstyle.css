@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted pink; */
+}
+
+div.header{
+    width: 940px;
+    height: 50px;
+    margin: 0px auto;
+    display: flex;
+    justify-content:space-between;
+}
+
+div.header h1{
+    font-size: 45px\;
+    font-style: italic;
+}
+div.container{
+    width: 980px;
+    min-height: 800px;
+    /* background-color: #6f5964; */
+    margin: 0px auto;
+    vertical-align: top;
+    background-image: radial-gradient(circle at 51.26% 46.55%, #765550 0, #75504e 7.14%, #73494b 14.29%, #704249 21.43%, #6c3a47 28.57%, #673246 35.71%, #612945 42.86%, #591f44 50%, #501644 57.14%, #450e45 64.29%, #390a47 71.43%, #2b0949 78.57%, #170a4b 85.71%, #000b4e 92.86%, #000c50 100%);
+}
+
+div.container div.about h3{
+    color: white;
+    /* background-color: #a2a1a9; */
+    height: 35px;
+    padding: 7px 8px 0px 16px;
+    background: linear-gradient(#b2b1b5, #898795, #b2b1b5);/**Gradiente lineal con tres variables**/
+}
+
+div.container div.image{
+    /* width: 400px;
+    height: 266px; */
+    display: inline-block;
+    background-color: #a2a1a9;
+    vertical-align: -30px;
+    margin: 16px 8px 15px 16px;
+    }
+
+div.container div.image img{
+    width: 393px;
+    height: 266px;
+    border: outset #a2a1a9;    
+}
+
+div.container div.about{
+    width: 493px;
+    height: 277px;
+    display: inline-block;
+    background-color: #fbfafb;
+    margin: 10px 8px 15px 16px; 
+}
+
+div.container div.about p{
+    font-size: 17px;
+    padding: 0px 7px 7px 10px;
+    margin-top: 10px;
+}
+div.container div.tag{
+    width: 288px;
+    height: 425px;
+    display:inline-block;
+    margin: 16px 8px 0px 16px;
+    background-color: #fbfafb;
+    vertical-align: top;
+
+}
+
+div.container div.tag h3{
+    color: white;
+    background-color: #a2a1a9;
+    height: 35px;
+    padding: 10px 5px 5px 10px;
+    background: linear-gradient(#b2b1b5, #898795, #b2b1b5);
+}
+
+div.container div.tag img{
+    width: 100%;
+    height: auto;  
+}
+div.container div.tag p{
+    font-size: 17px;
+    padding: 7px 10px 0px 10px;
+    
+}
+div.container div.bottom {
+    width: 288px;
+    height: 260px;
+    display: inline-block;
+    margin: 0px 8px 25px 16px;
+    background-color: #fbfafb;
+    vertical-align: top; /**sirve para alinear bloques paralelos**/
+}
+
+div.container div.bottom img{
+    width: 37px;
+    height: auto;
+    padding: 2px ;
+    margin: 5px 0px 5px 10px;
+    vertical-align: top;
+}
+
+div.container div.bottom h3{
+    color: white;
+    background-color: #a2a1a9;
+    height: 35px;
+    padding: 10px 5px 5px 10px;
+    background: linear-gradient(#b2b1b5, #898795, #b2b1b5);
+}
+
+
+div.footer{
+    text-align: center;
+    margin: 5px 0px 15px 0px ;
+}
+
+div.footer img{
+    width: 20px;
+    height: auto;
+}
+
+div.footer ul{
+    display: inline-block;
+}
+
+div.footer ul li{
+    display: inline-block;
+    font-style: italic;
+}
+
+div.container div.bottom button{
+    background-color: #437f64;
+    width: 130px;
+    height: 40px;
+    padding: 7px 5px 7px 10px;
+    margin: 30px 0px 0px 80px;
+    font-size: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;/**con esto se pone sombra al boton**/
+}

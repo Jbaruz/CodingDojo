@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+#wrapper{
+    width: 950px;
+    background-color: silver;
+    margin: 0px auto;
+    /** Hice padding para expandir el area gris**/
+    padding: 10px 20px 20px 20px;
+
+}
+#header{
+    min-height: 150px;
+    background-color: green;
+    /** aumente de 0 a 20px para alejar el area azul del area verde**/
+    margin:20px auto;
+}
+#navigation{
+    min-height: 300px;
+    width: 200px;
+    background-color: blue;
+    /** agregue display para que el area roja se ponga a la derecha del azul**/
+    display: inline-block;
+    /** agregue margin right para alejar el area roja alineado al area verde**/
+    margin-right: 25px;
+    /** agregue vertical align para poner al mismo nivel del bloque rojo**/
+    vertical-align: 20px;
+}
+#main_content{
+    min-height: 400px;
+    width: 715px;
+    background-color: red;
+    /** agregue display para que el area roja se ponga a la derecha del azul**/
+    display: inline-block;
+    /** Agregar padding top y left para posicionar las areas amarillas y roja nivelada con la azul**/
+    padding-top: 100px;
+    padding-left: 5px;
+    
+}
+.subcontents{
+    min-height: 200px;
+    width: 210px;
+    background-color: yellow;
+    /** agregue display para que el area roja se ponga a la derecha del azul**/
+    display: inline-block;
+    /** margin left and bottom para separar entre los bloques amarill y con el bloque morado**/
+    margin-left: 9px;
+    margin-bottom: 20px;
+    /** use position relative para ubicarlo con un numero negativo en la altura y asi subir el bloque amarillo**/
+    position: relative;
+    top: -85px;
+}
+#advertisement{
+    min-height: 120px;
+    width: 660px;
+    background-color: purple;
+    /** use margin left para obtener la distancia a la izquierda**/
+    margin-left: 9px;
+    /** use position relative para ubicarlo con un numero negativo en la altura y asi subir el bloque morado**/
+    position: relative;
+    top: -80px;
+    
+}

@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    /**border: 1px solid red;**/
+}
+
+.containerSections {
+    width: 101%;
+    height: 88vw;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: auto;
+}
+
+.sectionLeft {
+    background-image: url("https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png");
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.sectionRight {
+    background-color: black;
+    width: 45%;
+}
+
+.logoContainer img {
+    height: 43px;
+    width: 43px;
+}
+
+.logoContainer {
+    margin: 30% 10% 8% 10% 
+}
+
+.titleContainer h1 {
+    font-size: 70px;
+    letter-spacing: -1.2px;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-wrap: break-word;
+}
+
+.subtitleContainer h3 {
+    font-size: 34px;
+    letter-spacing: 0;
+    font-style: normal;
+    font-weight: 700;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h3 {
+    color: white;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 9px;
+}
+
+button {
+    margin: 9%;
+    width: 380px;
+    height: 52px;
+    border-radius: 50%;
+    border-radius: 25px;
+    font-size: 23px;
+    color: white;
+    box-shadow: none; 
+}
+
+#btnLogin {
+    border: 1px solid #516860;
+    background-color: transparent;
+    color: #1A8CD8;
+}
+#btnRegister {
+    border: 0;
+    background-color: #1A8CD8;
+}
+
+.footer {
+    background-color:black;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 17px;
+    box-sizing: border-box;
+    text-align: center;
+}
+#nav-menu {
+    list-style-type: none;
+}
+#nav-menu li {
+    display: inline;
+}
+#nav-menu a {
+    color: #1A8CD8;
+}

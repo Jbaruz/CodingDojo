@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Formulario Inscripcion</title>
+    <meta name="robots" content="noindex,nofollow,max-snippet:20">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jbaruz">
+</head>
+<body>
+    <div class="container">
+        <h1> Hola Mundo</h1>
+    </div>
+    <div>
+        <h2 class="titles"> Inscribete Humano!</h2>
+    </div>
+    <div>
+        <p class="subtitles"> Es importante inscribirte para que nuestro sistema de reconozca como humano, no trates de evadirlo, estamos observando...</p>
+    </div>
+        <div class="pblocktext"> 
+        <!--Input texto-->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="pblocktext">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+    </div>    
+    <div class="pblocktext">
+        <!-- Contrasena-->
+        <label for="pass">Contraseña: </label>
+        <input type="password" id="pass" name="password" placeholder="Aqui pon contrasena" minlength="6" required>
+    </div>
+    <div class="pblocktext">
+        <!--Confirmacion de contrasena-->
+        <label for="conf">Confirmar: </label>
+        <input type="password" id="conf" name="password" minlength="6" required>
+    </div>
+    <div class="pblocktext">
+        <form class="pblocktext">
+            <label for="birthday"> Cumpleaños:</label>
+            <input type="date" id="birthday" name="birthday">
+        </form>
+    </div>
+    <div class="pblocktext">
+        <!-- Input Botones-->
+        <label for="Mujer">Mujer</Label>
+        <input type="checkbox" id="Mujer" name="Sex" value="Mujer">
+
+        <label for="Hombre">Hombre: </label> 
+        <input type="checkbox" id="Hombre" name="Sex" value="Hombre">
+
+        <label for="Otro"> Otro:</label>
+        <input type="checkbox" id="Otro" name="Sex" value="Otro">
+    </div>
+    <div class="pblocktext">
+        <!--Caja de comentarios-->
+        <div>
+            <h2 class="titles"> Una Breve descripcion de ti: </h2>
+        </div>
+        <textarea name="description"></textarea>
+    </div>
+    <div class="pblocktext"> 
+        <!--Menu desplegable-->
+        <div class="pblocktect"> Lenguaje favorito:</div>
+            <select name="Programas">
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="C++">C++</option>
+            </select>
+    </div>
+    <div class="pblocktext">
+        <!-- Boton enviar-->
+        <input type="submit" value="Enviar">
+    </div>
+    <div>
+
+        
+    </div>
+
+</body>
+</html>
