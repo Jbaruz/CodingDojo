@@ -1,0 +1,404 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: black;
+    /* outline: 1px dotted pink; */
+    
+}
+
+
+/* -------------------CONTAINER PRINCIPAL------------------ */
+.container{
+    width: 970px;
+    height: 1100px;
+    margin: 0px auto; /** Para centrar container**/
+    vertical-align: top; /**Para centrar container**/
+    background-color: black;
+}
+
+
+/* ---------------------------------BANNER------------------------------- */
+.banner{
+    width: 970px;
+    height: 100px;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    font-family: vegur, 'PT Sans', Verdana, sans-serif;
+}
+
+.banner img{
+    width: 200px;
+    height: 55px;
+    margin: 17px 10px 20px 10px;
+}
+
+.banner h4{
+    color: white;
+    font-size: 14px;
+    margin: 15px 15px 0px 10px;
+}
+
+
+/* ---------------------------MENU DE ARRIBA ---------------------------------*/
+.topmenu{
+    width: 970px;
+    height: 55px;
+    margin: 0px auto; /** Para centrar container**/
+    vertical-align: top; /**Para centrar container**/    
+}
+
+.topmenu ul{
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    background: linear-gradient(#4d4b4b, #303030,#5c5a5a);
+}
+
+.topmenu li{
+    margin: 13px;
+}
+
+.topmenu button{
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.topmenu a:link{
+    font-size: 13px;
+    text-decoration: none; 
+}
+
+.topmenu a{
+    color: gray;
+}
+
+.topmenu h5{
+    color: white;
+    font-size: 14px;
+}
+
+.topmenu span{
+    color: gray;
+    font-size: 20px;
+    margin: 10px 0px 9px 10px;
+}
+
+/* ---------------------------CONTAINER CENTRAL--------------------------*/
+.containercentral1{
+    width: 242px;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+
+.containercentral1 span img{
+    width: 970px;
+    height: 373px;
+}
+
+.containercentral1 img{
+    width: 50px; 
+    height: 38px;
+}
+
+.par1 p{
+    font-size: 13px;
+}
+
+.par1 h4{
+    color: #d8762a;
+    font-size: 18px;
+}
+
+.icon1{
+    margin: 14px 10px 10px 10px;
+}
+
+
+
+.containercentral2{
+    width: 242px;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+
+.containercentral2 span img{
+    width: 970px;
+    height: 373px;
+}
+
+.containercentral2 img{
+    width: 50px; 
+    height: 38px;
+}
+
+.par2 p{
+    font-size: 13px;
+}
+
+.par2 h4{
+    color: #d8762a;
+    font-size: 18px;
+}
+
+.icon2{
+    margin: 14px 10px 10px 10px;
+}
+
+
+
+.containercentral3{
+    width: 242px;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+
+.containercentral3 span img{
+    width: 970px;
+    height: 373px;
+}
+
+.containercentral3 img{
+    width: 50px; 
+    height: 38px;
+}
+
+.par3 p{
+    font-size: 13px;
+}
+
+.par3 h4{
+    color: #d8762a;
+    font-size: 18px;
+}
+
+.icon3{
+    margin: 14px 10px 10px 10px;
+}
+
+
+
+.containercentral4{
+    width: 242px;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+
+.containercentral4 span img{
+    width: 970px;
+    height: 373px;
+}
+
+.containercentral4 img{
+    width: 50px; 
+    height: 38px;
+}
+
+.par4 p{
+    font-size: 13px;
+}
+
+.par4 h4{
+    color: #d8762a;
+    font-size: 18px;
+}
+
+.icon4{
+    margin: 14px 10px 10px 10px;
+}
+
+
+.containercentral{
+    display: flex;
+    background-color: black;
+}
+
+
+
+/* ---------------------------CONTAINER CENTRAL INFERIOR --------------------------*/
+.containercentralinferior{
+    width: 970px;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.ccinf1{
+    width: 700px;
+    color: white;
+}
+
+.ccinf1 h4{
+    font-size: 22px;   
+}
+
+.ccinf1 p{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.ccinf2 button{
+    width: 120px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ccinf2 button{
+    color: white;
+    background-color: orange;
+    text-decoration: none;
+}
+
+
+
+/* ---------------------------ESPACIO ENTRE CONTAINER INFERIOR Y PIE DE PAGINA --------------------------*/
+.gapbtwccinfandfooter{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    margin: 30px 0px 14px 0px;
+}
+
+.gapbtwccinfandfooter span{
+    color: white;
+}
+
+.gapbtwccinfandfooter a{
+    text-decoration: none;
+    font-style: italic;
+    font-size: 13px;
+    color: #d8762a;
+}
+
+
+/* ---------------------------PORTAFOLIOS DE PIE DE PAGINA --------------------------*/
+.footer{
+    width: 970px;
+    height: 260px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.portafolio1{
+    width: 200px;
+}
+
+.portafolio1 p{
+    font-size: 13px;
+    color: white;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.portafolio1 h4{
+    color: #d8762a;
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.portafolio1 img{
+    width: 200px;
+    height: 128px;
+}
+
+
+
+.portafolio2{
+    width: 200px;
+}
+
+.portafolio2 p{
+    font-size: 13px;
+    color: white;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.portafolio2 h4{
+    color: #d8762a;
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.portafolio2 img{
+    width: 200px;
+    height: 128px;
+}
+
+
+
+.portafolio3{
+    width: 200px;
+}
+
+.portafolio3 p{
+    font-size: 13px;
+    color: white;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.portafolio3 h4{
+    color: #d8762a;
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.portafolio3 img{
+    width: 200px;
+    height: 128px;
+}
+
+
+
+
+.portafolio4{
+    width: 200px;
+}
+
+.portafolio4 p{
+    font-size: 13px;
+    color: white;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.portafolio4 h4{
+    color: #d8762a;
+    font-size: 18px;
+    margin-top: 13px;
+}
+
+.portafolio4 img{
+    width: 200px;
+    height: 128px;
+}
+
+
+/* ------------------LINK FOOTER EXTREMO DERECHO------------------------- */
+.container span a:link{
+    text-decoration: none;
+    font-size: 11px;
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+
+    height: 20px;
+    margin-top: 25px;
+}
+
+.container span a{
+    color:gray;
+}

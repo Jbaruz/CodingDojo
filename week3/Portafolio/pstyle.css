@@ -45,7 +45,7 @@ div.container div.image{
 div.container div.image img{
     width: 393px;
     height: 266px;
-    border: outset #a2a1a9;    
+    border: outset #a2a1a9;    /**BORDE DE IMAGEN**/
 }
 
 div.container div.about{
