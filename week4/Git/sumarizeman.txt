@@ -1,0 +1,688 @@
+Git Manual
+
+DESCRIPTION
+       Git is a fast, scalable, distributed revision control system with an
+       unusually rich command set that provides both high-level operations and
+       full access to internals
+   After you mastered the basic concepts, you can come back to this page to
+       learn what commands Git offers. You can learn more about individual Git
+       commands with "git help command". gitcli(7) manual page gives you an
+       overview of the command-line command syntax.
+ A formatted and hyperlinked copy of the latest Git documentation can be
+       viewed at https://git.github.io/htmldocs/git.html or
+       https://git-scm.com/docs.
+
+GIT COMMANDS
+       We divide Git into high level ("porcelain") commands and low level
+       ("plumbing") commands.
+
+HIGH-LEVEL COMMANDS (PORCELAIN)
+       We separate the porcelain commands into the main commands and some
+       ancillary user utilities.
+
+  Main porcelain commands
+       git-add(1)
+           Add file contents to the index.
+
+       git-am(1)
+           Apply a series of patches from a mailbox.
+
+       git-archive(1)
+           Create an archive of files from a named tree.
+
+       git-bisect(1)
+           Use binary search to find the commit that introduced a bug.
+
+       git-branch(1)
+           List, create, or delete branches.
+
+       git-bundle(1)
+	Move objects and refs by archive.
+
+       git-checkout(1)
+           Switch branches or restore working tree files.
+
+       git-cherry-pick(1)
+           Apply the changes introduced by some existing commits.
+
+       git-citool(1)
+           Graphical alternative to git-commit.
+
+       git-clean(1)
+           Remove untracked files from the working tree.
+
+       git-clone(1)
+           Clone a repository into a new directory.
+
+       git-commit(1)
+           Record changes to the repository.
+:	 git-describe(1)
+           Give an object a human readable name based on an available ref.
+
+       git-diff(1)
+           Show changes between commits, commit and working tree, etc.
+
+       git-fetch(1)
+           Download objects and refs from another repository.
+
+       git-format-patch(1)
+           Prepare patches for e-mail submission.
+
+       git-gc(1)
+           Cleanup unnecessary files and optimize the local repository.
+
+       git-grep(1)
+           Print lines matching a pattern.
+
+       git-gui(1)
+           A portable graphical interface to Git.
+	 git-init(1)
+           Create an empty Git repository or reinitialize an existing one.
+
+       git-log(1)
+           Show commit logs.
+
+       git-maintenance(1)
+           Run tasks to optimize Git repository data.
+
+       git-merge(1)
+           Join two or more development histories together.
+
+       git-mv(1)
+           Move or rename a file, a directory, or a symlink.
+
+       git-notes(1)
+           Add or inspect object notes.
+
+       git-pull(1)
+           Fetch from and integrate with another repository or a local branch
+
+	git-push(1)
+           Update remote refs along with associated objects.
+
+       git-range-diff(1)
+           Compare two commit ranges (e.g. two versions of a branch).
+
+       git-rebase(1)
+           Reapply commits on top of another base tip.
+
+       git-reset(1)
+           Reset current HEAD to the specified state.
+
+       git-restore(1)
+           Restore working tree files.
+
+       git-revert(1)
+           Revert some existing commits.
+
+       git-rm(1)
+           Remove files from the working tree and from the index.
+	
+	git-shortlog(1)
+           Summarize git log output.
+
+       git-show(1)
+           Show various types of objects.
+
+       git-sparse-checkout(1)
+           Initialize and modify the sparse-checkout.
+
+       git-stash(1)
+           Stash the changes in a dirty working directory away.
+
+       git-status(1)
+           Show the working tree status.
+
+       git-submodule(1)
+           Initialize, update or inspect submodules.
+
+       git-switch(1)
+           Switch branches.
+
+	 git-tag(1)
+           Create, list, delete or verify a tag object signed with GPG.
+
+       git-worktree(1)
+           Manage multiple working trees.
+
+       gitk(1)
+           The Git repository browser.
+
+   Ancillary Commands
+       Manipulators:
+
+       git-config(1)
+           Get and set repository or global options.
+
+       git-fast-export(1)
+           Git data exporter.
+
+       git-fast-import(1)
+           Backend for fast Git data importers.
+
+	       git-mergetool(1)
+           Run merge conflict resolution tools to resolve merge conflicts.
+
+       git-pack-refs(1)
+           Pack heads and tags for efficient repository access.
+
+       git-prune(1)
+           Prune all unreachable objects from the object database.
+
+       git-reflog(1)
+           Manage reflog information.
+
+       git-remote(1)
+           Manage set of tracked repositories.
+
+       git-repack(1)
+           Pack unpacked objects in a repository.
+
+       git-replace(1)
+           Create, list, delete refs to replace objects.
+
+
+ Reset, restore and revert
+       There are three commands with similar names: git reset, git restore and
+       git revert.
+
+       •   git-revert(1) is about making a new commit that reverts the changes
+           made by other commits.
+
+       •   git-restore(1) is about restoring files in the working tree from
+           either the index or another commit. This command does not update your
+           branch. The command can also be used to restore files in the index
+           from another commit.
+
+       •   git-reset(1) is about updating your branch, moving the tip in order
+           to add or remove commits from the branch. This operation changes the
+           commit history.
+
+           git reset can also be used to restore the index, overlapping with git
+           restore.
+
+Manipulation commands
+       git-apply(1)
+           Apply a patch to files and/or to the index.
+
+       git-checkout-index(1)
+           Copy files from the index to the working tree.
+
+       git-commit-graph(1)
+           Write and verify Git commit-graph files.
+
+       git-commit-tree(1)
+           Create a new commit object.
+
+       git-hash-object(1)
+           Compute object ID and optionally creates a blob from a file.
+
+       git-index-pack(1)
+           Build pack index file for an existing packed archive.
+
+       git-merge-file(1)
+           Run a three-way file merge.
+:
+GITTUTORIAL
+
+IMPORTING A NEW PROJECT
+       Assume you have a tarball project.tar.gz with your initial work. You can
+       place it under Git revision control as follows.
+
+           $ tar xzf project.tar.gz
+           $ cd project
+           $ git init
+
+
+       Git will reply
+
+           Initialized empty Git repository in .git/
+
+
+       You’ve now initialized the working directory—you may notice a new
+       directory created, named ".git".
+
+       Next, tell Git to take a snapshot of the contents of all files under the
+       current directory (note the .), with git add:
+
+           $ git add .
+
+
+       This snapshot is now stored in a temporary staging area which Git calls
+       the "index". You can permanently store the contents of the index in the
+       repository with git commit:
+
+           $ git commit
+
+
+       This will prompt you for a commit message. You’ve now stored the first
+       version of your project in Git.
+
+	MAKING CHANGES
+       Modify some files, then add their updated contents to the index:
+
+           $ git add file1 file2 file3
+
+
+       You are now ready to commit. You can see what is about to be committed
+       using git diff with the --cached option:
+
+           $ git diff --cached
+
+
+       (Without --cached, git diff will show you any changes that you’ve made
+       but not yet added to the index.) You can also get a brief summary of the
+       situation with git status:
+
+           $ git status
+           On branch master
+           Changes to be committed:
+           Your branch is up to date with 'origin/master'.
+             (use "git restore --staged <file>..." to unstage)
+
+                  modified:   file1
+                   modified:   file2
+                   modified:   file3
+
+If you need to make any further adjustments, do so now, and then add any
+       newly modified content to the index. Finally, commit your changes with:
+
+           $ git commit
+
+
+       This will again prompt you for a message describing the change, and then
+       record a new version of the project.
+
+       Alternatively, instead of running git add beforehand, you can use
+
+           $ git commit -a
+
+
+       which will automatically notice any modified (but not new) files, add
+       them to the index, and commit, all in one step.
+
+
+
+VIEWING PROJECT HISTORY
+       At any point you can view the history of your changes using
+
+           $ git log
+
+
+       If you also want to see complete diffs at each step, use
+
+           $ git log -p
+
+
+       Often the overview of the change is useful to get a feel of each step
+
+           $ git log --stat --summary
+
+
+MANAGING BRANCHES
+       A single Git repository can maintain multiple branches of development. To
+       create a new branch named "experimental", use
+
+           $ git branch experimental
+
+
+       If you now run
+
+           $ git branch
+
+
+       you’ll get a list of all existing branches:
+
+             experimental
+           * master
+
+GIT-ADD
+
+NAME
+       git-add - Add file contents to the index
+
+DESCRIPTION
+       This command updates the index using the current content found in the
+       working tree, to prepare the content staged for the next commit. It
+       typically adds the current content of existing paths as a whole, but with
+       some options it can also be used to add content with only part of the
+       changes made to the working tree files applied, or remove paths that do
+       not exist in the working tree anymore.
+
+OPTIONS
+       <pathspec>...
+           Files to add content from. Fileglobs (e.g.  *.c) can be given to add
+           all matching files. Also a leading directory name (e.g.  dir to add
+           dir/file1 and dir/file2) can be given to update the index to match
+           the current state of the directory as a whole (e.g. specifying dir
+           will record not just a file dir/file1 modified in the working tree, a
+           file dir/file2 added to the working tree, but also a file dir/file3
+           removed from the working tree). Note that older versions of Git used
+           to ignore removed files; use --no-all option if you want to add
+           modified or new files but ignore removed ones.
+
+EXAMPLES
+       •   Adds content from all *.txt files under Documentation directory and
+           its subdirectories:
+
+               $ git add Documentation/\*.txt
+
+           Note that the asterisk * is quoted from the shell in this example;
+           this lets the command include the files from subdirectories of
+           Documentation/ directory.
+
+       •   Considers adding content from all git-*.sh scripts:
+
+               $ git add git-*.sh
+
+           Because this example lets the shell expand the asterisk (i.e. you are
+           listing the files explicitly), it does not consider
+           subdir/git-foo.sh.
+
+
+GIT-COMMIT
+
+
+NAME
+       git-commit - Record changes to the repository
+
+
+DESCRIPTION
+       Create a new commit containing the current contents of the index and the
+       given log message describing the changes. The new commit is a direct
+       child of HEAD, usually the tip of the current branch, and the branch is
+       updated to point to it (unless no branch is associated with the working
+       tree, in which case HEAD is "detached" as described in git-checkout(1)).
+
+EXAMPLES
+       When recording your own work, the contents of modified files in your
+       working tree are temporarily stored to a staging area called the "index"
+       with git add. A file can be reverted back, only in the index but not in
+       the working tree, to that of the last commit with git restore --staged
+       <file>, which effectively reverts git add and prevents the changes to
+       this file from participating in the next commit. After building the state
+       to be committed incrementally with these commands, git commit (without
+       any pathname parameter) is used to record what has been staged so far.
+       This is the most basic form of the command. An example:
+
+           $ edit hello.c
+           $ git rm goodbye.c
+           $ git add hello.c
+           $ git commit
+
+  Instead of staging files after each individual change, you can tell git
+       commit to notice the changes to the files whose contents are tracked in
+       your working tree and do corresponding git add and git rm for you. That
+       is, this example does the same as the earlier example if there is no
+       other change in your working tree:
+
+           $ edit hello.c
+           $ rm goodbye.c
+           $ git commit -a
+
+   The command git commit -a first looks at your working tree, notices that
+       you have modified hello.c and removed goodbye.c, and performs necessary
+       git add and git rm for you.
+
+       After staging changes to many files, you can alter the order the changes
+       are recorded in, by giving pathnames to git commit. When pathnames are
+       given, the command makes a commit that only records the changes made to
+       the named paths:
+
+           $ edit hello.c hello.h
+           $ git add hello.c hello.h
+           $ edit Makefile
+           $ git commit Makefile
+
+COMMIT INFORMATION
+       Author and committer information is taken from the following environment
+       variables, if set:
+
+           GIT_AUTHOR_NAME
+           GIT_AUTHOR_EMAIL
+           GIT_AUTHOR_DATE
+           GIT_COMMITTER_NAME
+           GIT_COMMITTER_EMAIL
+           GIT_COMMITTER_DATE
+
+
+
+GIT-PUSH
+
+NAME
+       git-push - Update remote refs along with associated objects
+
+
+DESCRIPTION
+       Updates remote refs using local refs, while sending objects necessary to
+       complete the given refs.
+
+       You can make interesting things happen to a repository every time you
+       push into it, by setting up hooks there. See documentation for git-
+       receive-pack(1).
+
+       When the command line does not specify where to push with the
+       <repository> argument, branch.*.remote configuration for the current
+       branch is consulted to determine where to push. If the configuration is
+       missing, it defaults to origin.
+
+OPTIONS
+       <repository>
+           The "remote" repository that is destination of a push operation. This
+           parameter can be either a URL (see the section GIT URLS below) or the
+           name of a remote (see the section REMOTES below).
+
+       <refspec>...
+           Specify what destination ref to update with what source object. The
+           format of a <refspec> parameter is an optional plus +, followed by
+           the source object <src>, followed by a colon :, followed by the
+           destination ref <dst>.
+
+           The <src> is often the name of the branch you would want to push, but
+           it can be any arbitrary "SHA-1 expression", such as master~4 or HEAD
+           (see gitrevisions(7)).
+
+GIT URLS
+       In general, URLs contain information about the transport protocol, the
+       address of the remote server, and the path to the repository. Depending
+       on the transport protocol, some of this information may be absent.
+
+       Git supports ssh, git, http, and https protocols (in addition, ftp, and
+       ftps can be used for fetching, but this is inefficient and deprecated; do
+       not use it).
+
+       The native transport (i.e. git:// URL) does no authentication and should
+       be used with caution on unsecured networks.
+
+       The following syntaxes may be used with them:
+
+       •   ssh://[user@]host.xz[:port]/path/to/repo.git/
+
+       •   git://host.xz[:port]/path/to/repo.git/
+
+       •   http[s]://host.xz[:port]/path/to/repo.git/
+
+       •   ftp[s]://host.xz[:port]/path/to/repo.git/
+
+
+  A single character indicating the status of the ref:
+
+           (space)
+               for a successfully pushed fast-forward;
+
+           +
+               for a successful forced update;
+
+           -
+               for a successfully deleted ref;
+
+           *
+               for a successfully pushed new ref;
+
+           !
+               for a ref that was rejected or failed to push; and
+
+           =
+               for a ref that was up to date and did not need pushing.
+
+
+
+EXAMPLES
+       git push
+           Works like git push <remote>, where <remote> is the current branch’s
+           remote (or origin, if no remote is configured for the current
+           branch).
+
+       git push origin
+           Without additional configuration, pushes the current branch to the
+           configured upstream (branch.<name>.merge configuration variable) if
+           it has the same name as the current branch, and errors out without
+           pushing otherwise.
+
+           The default behavior of this command when no <refspec> is given can
+           be configured by setting the push option of the remote, or the
+           push.default configuration variable.
+
+           For example, to default to pushing only the current branch to origin
+           use git config remote.origin.push HEAD. Any valid <refspec> (like the
+           ones in the examples below) can be configured as the default for git
+           push origin.
+
+       git push origin :
+           Push "matching" branches to origin. See <refspec> in the OPTIONS
+           section above for a description of "matching" branches.
+
+       git push origin master
+           Find a ref that matches master in the source repository (most likely,
+           it would find refs/heads/master), and update the same ref (e.g.
+           refs/heads/master) in origin repository with it. If master did not
+           exist remotely, it would be created.
+
+       git push origin HEAD
+           A handy way to push the current branch to the same name on the
+           remote.
+
+       git push mothership master:satellite/master dev:satellite/dev
+           Use the source ref that matches master (e.g.  refs/heads/master) to
+           update the ref that matches satellite/master (most probably
+           refs/remotes/satellite/master) in the mothership repository; do the
+           same for dev and satellite/dev.
+
+           See the section describing <refspec>... above for a discussion of the
+           matching semantics.
+:
+
+      git push origin master:refs/heads/experimental
+           Create the branch experimental in the origin repository by copying
+           the current master branch. This form is only needed to create a new
+           branch or tag in the remote repository when the local name and the
+           remote name are different; otherwise, the ref name on its own will
+           work.
+
+       git push origin :experimental
+           Find a ref that matches experimental in the origin repository (e.g.
+           refs/heads/experimental), and delete it.
+
+       git push origin +dev:master
+           Update the origin repository’s master branch with the dev branch,
+           allowing non-fast-forward updates.  This can leave unreferenced
+           commits dangling in the origin repository. Consider the following
+           situation, where a fast-forward is not possible:
+
+                           o---o---o---A---B  origin/master
+                                    \
+                                     X---Y---Z  dev
+:
+
+GIT-REMOTE
+
+NAME
+       git-remote - Manage set of tracked repositorie
+
+
+DESCRIPTION
+       Manage the set of repositories ("remotes") whose branches you track.
+
+
+COMMANDS
+       With no arguments, shows a list of existing remotes. Several subcommands
+       are available to perform operations on the remotes.
+
+       add
+           Add a remote named <name> for the repository at <url>. The command
+           git fetch <name> can then be used to create and update
+           remote-tracking branches <name>/<branch>.
+
+           With -f option, git fetch <name> is run immediately after the remote
+           information is set up.
+
+           With --tags option, git fetch <name> imports every tag from the
+           remote repository.
+
+           With --no-tags option, git fetch <name> does not import tags from the
+           remote repository.
+
+           By default, only tags on fetched branches are imported (see git-
+           fetch(1)).
+
+           With -t <branch> option, instead of the default glob refspec for the
+           remote to track all branches under the refs/remotes/<name>/
+           namespace, a refspec to track only <branch> is created. You can give
+           more than one -t <branch> to track multiple branches without grabbing
+           all branches.
+
+           With -m <master> option, a symbolic-ref refs/remotes/<name>/HEAD is
+           set up to point at remote’s <master> branch. See also the set-head
+           command.
+
+           When a fetch mirror is created with --mirror=fetch, the refs will not
+           be stored in the refs/remotes/ namespace, but rather everything in
+           refs/ on the remote will be directly mirrored into refs/ in the local
+           repository. This option only makes sense in bare repositories,
+           because a fetch would overwrite any local commits.
+
+           When a push mirror is created with --mirror=push, then git push will
+           always behave as if --mirror was passed.
+
+
+EXAMPLES
+       •   Add a new remote, fetch, and check out a branch from it
+
+               $ git remote
+               origin
+               $ git branch -r
+                 origin/HEAD -> origin/master
+                 origin/master
+               $ git remote add staging git://git.kernel.org/.../gregkh/staging.
+git
+               $ git remote
+               origin
+               staging
+               $ git fetch staging
+               ...
+               From git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging
+                * [new branch]      master     -> staging/master
+                * [new branch]      staging-linus -> staging/staging-linus
+                * [new branch]      staging-next -> staging/staging-next
+               $ git branch -r
+                 origin/HEAD -> origin/master
+
+                 origin/master
+                 staging/master
+                 staging/staging-linus
+                 staging/staging-next
+               $ git switch -c staging staging/master
+               ...
+
+
+       •   Imitate git clone but track only selected branches
+
+               $ mkdir project.git
+               $ cd project.git
+               $ git init
+               $ git remote add -f -t master -m master origin git://example.com/git.git/
+               $ git merge origin
+
+
+
+
